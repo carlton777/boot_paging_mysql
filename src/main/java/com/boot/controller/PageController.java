@@ -19,6 +19,11 @@ import lombok.extern.slf4j.Slf4j;
 public class PageController {
 	@Autowired
 	private PageService service;
+
+	@RequestMapping("/")
+	public String home() {
+		return "redirect:list";
+	}
 	
 	@RequestMapping("/list")
 	public String list(Criteria cri, Model model) {
